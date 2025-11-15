@@ -2,3 +2,13 @@ Titre du Projet : Application Mobile de Santé Émotionnelle avec Analyse Compor
 Description : Application de bien-être digital utilisant le NLP pour analyser l'état émotionnel via des journaux vocaux/textuels, proposant des exercices personnalisés de méditation et un suivi longitudinal de la santé mentale.
 Technologies Suggérées : Flutter, Firebase, Python (NLP), TensorFlow
 Thèmes Principaux : Santé émotionnelle
+
+description 
+L'application mobile de santé émotionnelle est une solution innovante de bien-être digital qui permet aux utilisateurs de suivre et améliorer leur santé mentale au quotidien. 
+Développée avec Flutter pour iOS et Android, elle utilise l'intelligence artificielle et le traitement du langage naturel (NLP) pour analyser les journaux intimes textuels et vocaux des utilisateurs,
+identifiant automatiquement leurs émotions, leurs patterns comportementaux et les déclencheurs de stress. Grâce à des modèles TensorFlow sophistiqués, 
+l'application détecte l'état émotionnel en temps réel et propose des exercices personnalisés de méditation, respiration et thérapie cognitivo-comportementale adaptés aux besoins spécifiques de chaque utilisateur. 
+Le système offre un suivi longitudinal avec des visualisations intuitives (graphiques, calendriers émotionnels) permettant d'identifier les tendances et de mesurer les progrès sur le long terme.
+Firebase assure la gestion sécurisée des données avec chiffrement end-to-end, authentification biométrique et conformité RGPD. 
+L'application intègre également un système de détection de crise qui identifie les signes de détresse psychologique et propose des ressources d'aide immédiate. 
+Disponible en français et arabe, cette solution vise à démocratiser l'accès aux outils de santé mentale tout en respectant une approche éthique claire où l'application complète,sans remplacer, l'accompagnement par des professionnels de santé.
