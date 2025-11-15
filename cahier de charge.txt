@@ -1,0 +1,237 @@
+Application Mobile de Santé Émotionnelle avec Analyse Comportementale
+Vue d'ensemble du projet
+Cette application vise à révolutionner l'approche du bien-être mental en combinant l'intelligence artificielle et les pratiques de santé mentale éprouvées. Elle permet aux utilisateurs de suivre leur état émotionnel quotidien, d'identifier des patterns comportementaux et de recevoir des recommandations personnalisées pour améliorer leur santé mentale.
+
+Objectifs principaux
+
+Suivi émotionnel intelligent : Permettre aux utilisateurs d'exprimer leurs émotions via texte ou voix
+Analyse comportementale : Identifier les tendances, déclencheurs et patterns émotionnels
+Intervention personnalisée : Proposer des exercices adaptés à l'état émotionnel de l'utilisateur
+Prévention : Détecter précocement les signes de détresse psychologique
+Autonomisation : Donner aux utilisateurs les outils pour gérer leur santé mentale
+
+
+Fonctionnalités détaillées
+1. Journal Émotionnel Multimodal
+Entrées textuelles :
+
+Interface d'écriture intuitive avec suggestions de prompts
+Détection automatique de l'humeur via analyse sémantique
+Tags automatiques pour catégoriser les entrées (travail, relations, santé, etc.)
+Historique consultable avec recherche intelligente
+
+Entrées vocales :
+
+Enregistrement audio avec transcription automatique (Speech-to-Text)
+Analyse prosodique : ton, rythme, pauses pour détecter l'état émotionnel
+Sauvegarde optionnelle des enregistrements audio
+Possibilité de basculer entre modes vocal et textuel
+
+2. Analyse NLP Avancée
+Détection émotionnelle :
+
+Classification multi-labels : joie, tristesse, colère, anxiété, stress, etc.
+Score d'intensité émotionnelle (échelle 1-10)
+Identification de sentiments mixtes ou complexes
+Support multilingue (français, arabe, anglais pour le contexte marocain)
+
+Extraction d'insights :
+
+Identification des entités nommées (personnes, lieux, événements)
+Reconnaissance de patterns linguistiques associés à la dépression/anxiété
+Détection de pensées négatives récurrentes
+Analyse de la polarité du discours
+
+3. Tableaux de Bord et Visualisations
+Vue hebdomadaire/mensuelle :
+
+Graphiques d'évolution de l'humeur (courbes, heatmaps)
+Calendrier émotionnel avec codes couleur
+Statistiques sur les émotions dominantes
+Corrélations entre événements et états émotionnels
+
+Insights comportementaux :
+
+Identification des déclencheurs émotionnels
+Heures de la journée les plus difficiles
+Impact des activités sur l'humeur
+Alertes sur les tendances inquiétantes
+
+4. Bibliothèque d'Exercices Personnalisés
+Méditation guidée :
+
+Sessions audio de 5 à 30 minutes
+Thématiques variées : gestion du stress, sommeil, anxiété, confiance en soi
+Adaptation du contenu selon l'état émotionnel détecté
+Méditations en français et arabe
+
+Exercices de respiration :
+
+Techniques de cohérence cardiaque
+Respiration 4-7-8 pour l'anxiété
+Animations visuelles guidant le rythme respiratoire
+Suivi de la fréquence cardiaque (si smartwatch connectée)
+
+Thérapie cognitivo-comportementale (TCC) :
+
+Exercices de restructuration cognitive
+Journaling guidé sur les pensées automatiques
+Défis comportementaux progressifs
+Techniques de pleine conscience
+
+Activités de bien-être :
+
+Suggestions d'exercices physiques adaptés
+Routines de sommeil
+Pratiques de gratitude
+Activités créatives anti-stress
+
+5. Suivi Longitudinal et Prédictions
+Modèles prédictifs :
+
+Anticipation des périodes de vulnérabilité
+Alertes préventives basées sur les patterns historiques
+Recommandations proactives d'exercices
+
+Rapports personnalisés :
+
+Synthèses mensuelles des progrès
+Exportation de rapports PDF pour partage avec thérapeutes
+Comparaison avec les mois précédents
+
+6. Fonctionnalités de Sécurité et Support
+Détection de crise :
+
+Identification de langage à risque (idées suicidaires)
+Numéros d'urgence accessibles en un clic
+Protocole de contact d'urgence préétabli
+
+Confidentialité :
+
+Chiffrement end-to-end des données
+Authentification biométrique
+Mode privé pour entrées sensibles
+Conformité RGPD et lois marocaines sur les données de santé
+
+
+Architecture technique
+Frontend - Flutter
+Avantages :
+
+Application cross-platform (iOS/Android) avec code unique
+Interface fluide et performante
+Widgets riches pour visualisations de données
+Support natif de l'enregistrement audio
+
+Structure :
+lib/
+├── models/          # Modèles de données (Emotion, JournalEntry, Exercise)
+├── views/           # Écrans de l'application
+├── controllers/     # Logique métier
+├── services/        # Services (API, Audio, Notifications)
+├── widgets/         # Composants réutilisables
+└── utils/           # Helpers et constantes
+Backend - Firebase
+Services utilisés :
+
+Firestore : Base de données NoSQL pour journaux, profils utilisateurs
+Firebase Auth : Authentification sécurisée (email, Google, biométrie)
+Cloud Functions : Traitement serverless des analyses NLP
+Cloud Storage : Stockage des enregistrements audio
+Firebase ML Kit : OCR et reconnaissance vocale on-device
+Cloud Messaging : Notifications push personnalisées
+
+Architecture de données :
+users/
+  {userId}/
+    profile/
+    journal_entries/
+      {entryId}/
+        - text
+        - timestamp
+        - emotions []
+        - sentiment_score
+        - audio_url
+    analytics/
+      - weekly_summary
+      - triggers []
+    exercises/
+      - completed []
+      - favorites []
+Module NLP - Python/TensorFlow
+Pipeline de traitement :
+
+Prétraitement :
+
+Tokenisation avec support arabe/français
+Nettoyage du texte (stop words, normalisation)
+Lemmatisation
+
+
+Analyse émotionnelle :
+
+Modèle BERT multilingue fine-tuné sur corpus émotionnel
+Classification multi-labels avec Keras/TensorFlow
+Modèle de sentiment analysis (positive/negative/neutral)
+
+
+Extraction d'entités :
+
+SpaCy pour NER (Named Entity Recognition)
+Identification de patterns comportementaux
+Analyse temporelle des événements
+
+
+Modèles prédictifs :
+
+LSTM pour prédiction de tendances émotionnelles
+Détection d'anomalies avec Isolation Forest
+Modèle de recommandation d'exercices
+
+
+
+Déploiement :
+
+API REST avec Flask/FastAPI
+Conteneurisation Docker
+Déploiement sur Google Cloud Run ou Firebase Functions
+Cache Redis pour réponses fréquentes
+
+
+Flux utilisateur type
+Première utilisation
+
+Inscription et création de profil
+Questionnaire initial (objectifs, niveau de stress, habitudes)
+Tutoriel interactif
+Première entrée de journal (guidée)
+
+Utilisation quotidienne
+
+Notification rappel journalier (heure personnalisable)
+Saisie rapide de l'humeur ou journal complet
+Analyse en temps réel de l'état émotionnel
+Recommandation d'exercice adapté
+Feedback post-exercice
+
+Aspects innovants
+
+IA contextuelle : Adaptation selon culture marocaine, langue arabe dialectale
+Approche holistique : Combinaison journal + exercices + tracking
+Prévention active : Détection précoce plutôt que réactive
+Personnalisation profonde : Algorithmes d'apprentissage individuel
+Accessibilité : Interface en français et arabe, mode vocal pour illettrés
+
+
+Considérations éthiques et légales
+
+Pas un substitut médical : Disclaimer clair, encouragement à consulter des professionnels
+Consentement éclairé : Transparence sur l'utilisation des données
+Anonymisation : Agrégation des données pour recherche (opt-in)
+Certification : Conformité aux standards de santé digitale (ISO 13485, CE médical classe I)
+Partenariats : Collaboration avec psychologues marocains pour validation du contenu
+
+
+
+
+
