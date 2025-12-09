@@ -16,7 +16,7 @@ Backend & API : L'utilisation de FastAPI (Python) est l'état de l'art pour serv
 
 
 
-hado  des lien fihom nafs le fikra zidhom: 1. Solutions Cloud (API Commerciales)
+ 1. Solutions Cloud (API Commerciales)
 Ces solutions sont très puissantes mais nécessitent une connexion internet et sont souvent payantes. Elles fonctionnent comme votre ancien système (envoi d'image -> réception du résultat).
 
 Azure AI Vision (Microsoft)
